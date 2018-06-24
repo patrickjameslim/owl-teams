@@ -14,7 +14,7 @@ class App extends Component {
     teamColumns: []
   }
 
-  getChosenTeam = (teams, selectedTeam) => {
+  getInitialTeam = (teams, selectedTeam) => {
     const chosenTeam = teams.filter(team => team.name === selectedTeam);
     this.setState({chosenTeam: chosenTeam});
 
@@ -32,14 +32,22 @@ class App extends Component {
       selectedItem = event.target.parentElement.parentElement;
     }
     let teamName = selectedItem.lastChild.textContent;
+
     teamName = this.state.teams.filter(team => team.name === teamName);
+
+    console.log(teamName);
     
     this.setState({chosenTeam: teamName});
+
+    console.log(this.state.chosenTeam)
 
     const R = require('ramda');
 
     const teamColumns = R.splitEvery(4, this.state.chosenTeam[0].players);
+
     this.setState({teamColumns: teamColumns});
+
+    console.log(this.state.teamColumns);
   }
 
   componentDidMount() {
@@ -49,10 +57,10 @@ class App extends Component {
     })
     .then(data => {
       this.setState({teams: data});
-      this.getChosenTeam(data, 'Seoul Dynasty');
+      this.getInitialTeam(this.state.teams, 'Seoul Dynasty');
     });
   }
-
+  
   render() {
 
     return (
