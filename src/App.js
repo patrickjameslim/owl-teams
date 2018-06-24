@@ -35,6 +35,11 @@ class App extends Component {
     teamName = this.state.teams.filter(team => team.name === teamName);
     
     this.setState({chosenTeam: teamName});
+
+    const R = require('ramda');
+
+    const teamColumns = R.splitEvery(4, this.state.chosenTeam[0].players);
+    this.setState({teamColumns: teamColumns});
   }
 
   componentDidMount() {
