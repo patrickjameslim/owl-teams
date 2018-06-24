@@ -1,0 +1,130 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-family: "Titillium Web", "Source Sans Pro", Arial, sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 1.5625rem;
+}
+
+h2 {
+  font-size: 1.4375rem;
+}
+
+h3 {
+  font-size: 1.3125rem;
+}
+
+h4 {
+  font-size: 1.1875rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.App {
+  background: #3C404B;
+  color: #ffffff;
+}
+
+.header {
+  position:fixed;
+  z-index: 5;
+  width: 100%;
+  background: #FA9C1E;
+  padding: 16px;
+  font-weight: bold;
+}
+
+.overwatch-league {
+  display: flex;
+}
+
+.left-content, .right-content {
+  height: 100vh;
+  overflow: scroll;
+  overflow-x: hidden;
+
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+
+.left-content::-webkit-scrollbar, .right-content::-webkit-scrollbar { 
+  width: 0 !important;
+}
+.left-content::-webkit-scroll-bar-thumb, .right::-webkit-scrollbar-thumb {
+  background: red;
+}
+
+.left-content {
+  width: 20%;
+  border-right: 2px solid #16181D;
+}
+
+.right-content {
+  width: 80%;
+}
+
+.owl-teams, .team-information {
+  margin-top: 3.5625rem;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: #21232A;
+  border-bottom: 2px solid #16181D;
+}
+
+.list-item:hover {
+  filter: brightness(75%);
+  cursor: pointer;
+}
+
+.list-item > .avatar {
+  margin-right: 16px;
+}
+
+.list-item > .avatar > img {
+  max-width: 48px;
+}
+
+.list-item > .information > h1 {
+  font-weight: 300;
+}
+
+.team-name > .title {
+  color: #ffffff;
+  font-weight: 700;
+  padding: 1rem 0;
+}
+
+.team-information > .subheading {
+  padding: 1rem 0;
+  width: 12.625rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #FA9C1E;
+}
+
+.player > .image > img {
+  max-width: 13.24rem;
+}
+
+.card {
+  background: #21232A;
+}
+
+.card-content {
+  background: #16181D;
+}
+
+.media-content .title, .media-content .subtitle {
+  color: #ffffff;
+}
