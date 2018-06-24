@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 import { Container, Columns, Column } from 'bloomer';
 import { Card, CardImage, Image, Media, MediaContent, CardContent, Title, Subtitle } from 'bloomer';
+import * as R from 'ramda';
 
 import './Reset.css';
 import './App.css';
@@ -17,9 +18,6 @@ class App extends Component {
   getInitialTeam = (teams, selectedTeam) => {
     const chosenTeam = teams.filter(team => team.name === selectedTeam);
     this.setState({chosenTeam: chosenTeam});
-
-    const R = require('ramda');
-
     const teamColumns = R.splitEvery(4, this.state.chosenTeam[0].players);
     this.setState({teamColumns: teamColumns});
   }
@@ -39,9 +37,7 @@ class App extends Component {
     
     this.setState({chosenTeam: teamName});
 
-    console.log(this.state.chosenTeam)
-
-    const R = require('ramda');
+    console.log(this.state.chosenTeam);
 
     const teamColumns = R.splitEvery(4, this.state.chosenTeam[0].players);
 
@@ -97,7 +93,7 @@ class App extends Component {
                       </div>
                     )
                   })}
-                  <div className="subheading --orange">
+                  <div className="subheading">
                     <h3>Team Roster</h3>
                   </div>
                   <div className="player-list">
