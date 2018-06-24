@@ -35,8 +35,6 @@ class App extends Component {
     teamName = this.state.teams.filter(team => team.name === teamName);
     
     this.setState({chosenTeam: teamName});
-
-    this.showPlayers();
   }
 
   componentDidMount() {
@@ -48,34 +46,6 @@ class App extends Component {
       this.setState({teams: data});
       this.getChosenTeam(data, 'Seoul Dynasty');
     });
-  }
-
-  showPlayers = () => {
-    this.state.teamColumns.map((column, index) => {
-      return (
-        <Columns key={index}>
-          {column.map(player => {
-            return (
-              <Column key={player.id} isSize="1/4">
-                <Card>
-                  <CardImage>
-                      <Image isRatio='square' src={player.image_url} />
-                  </CardImage>
-                  <CardContent>
-                      <Media>
-                          <MediaContent>
-                              <Title isSize={4}>{player.name}</Title>
-                              <Subtitle isSize={6}>{player.first_name} {player.last_name}</Subtitle>
-                          </MediaContent>
-                      </Media>
-                  </CardContent>
-                </Card>
-              </Column>
-            )
-          })}
-        </Columns>
-      )
-    })
   }
 
   render() {
